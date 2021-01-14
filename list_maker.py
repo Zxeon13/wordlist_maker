@@ -32,15 +32,9 @@ words=glob.glob('word_list.txt')
 
 while True:   
     for script in words:
-        with open(script,'r') as f:
-            script_code = f.readlines()
-            final_code = []
-            final_code.extend(word)
-            final_code.extend("\n")
-            final_code.extend(script_code)
-
-            with open(script,'w') as f:
-                f.writelines(final_code)
+        with open(script,'w') as f:
+            f.writelines(word)
+            f.writelines('\n')
          
     try:
         while ord(word[index]) > end_L:
