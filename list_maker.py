@@ -32,7 +32,7 @@ words=glob.glob('word_list.txt')
 
 while True:   
     for script in words:
-        with open(script,'w') as f:
+        with open(script,'a') as f:
             f.writelines(word)
             f.writelines('\n')
          
