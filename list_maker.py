@@ -1,4 +1,4 @@
-import glob ,re
+import re
 index=0
 word=[]
 end_L=0
@@ -27,23 +27,24 @@ if re.search(r'[^a-zA-Z0-9]', L_type):
 for x in range(word_len):
     word.extend(chr(start_L))
 
+word_list='Words_list.txt'
 
-words=glob.glob('word_list.txt')
+print("generating...")
 
 while True:   
-    for script in words:
-        with open(script,'a') as f:
-            f.writelines(word)
-            f.writelines('\n')
-         
+    with open(word_list,'a') as f:
+        f.writelines(word)
+        f.writelines('\n')
+            
     try:
         while ord(word[index]) > end_L:
             word[index]=chr(start_L)
             index=index+1
-      
+        
         word[index]=chr(ord( word[index])+1)
         index=0
     except:
         print("done")
         break
 
+input()
