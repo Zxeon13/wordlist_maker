@@ -44,7 +44,7 @@ while True:
         word[index]=chr(ord( word[index])+1)
         index=0
     except:
-        print("done")
+        print("Done!")
         break
 
 input()
